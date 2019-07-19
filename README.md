@@ -33,10 +33,28 @@ This will be akin to the Web API that you built in the last sprint, only this ti
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. Explain the difference between `Relational Databases` and `SQL`.
+  
+  In relational databases, data is tabulated into rows and columns that have a "relationship" between one another usually just a label and a singular value, SQL is a query language commonly used to communicate with a database in order to manage and retreive data.
+
 1. Why do tables need a `primary key`?
+
+  tables need primary keys because they act as unique identifiers for ease of access during queries. without them in a massive database, data objects could get messy not only when searching for them but for updating any associated objects as well
+
 1. What is the name given to a table column that references the primary key on another table.
+
+  Foreign key
+
 1. What do we need in order to have a _many to many_ relationship between two tables.
 
+  you need to set up foreign keys
+
+  also this little chunk of code:
+    <!-- pool: {
+    afterCreate: (conn, done) => {
+      // runs after a connection is made to the sqlite engine
+      conn.run('PRAGMA foreign_keys = ON', done); // turn on FK enforcement
+    },
+  }, -->
 ## Project Set Up
 
 Follow these steps for starting your project.
